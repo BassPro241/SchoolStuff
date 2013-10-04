@@ -16,9 +16,9 @@ public class Stuff {
 	public static void main(String[] args)
 	{
 		
-		JPanel shapePanel;
+		JPanel panel1panel2;
 		int choice1 = JOptionPane.showConfirmDialog(
-			    null,
+			    panel1,
 			    "Would you like to calculate the area of a shape?",
 			    "Shapes",
 			    JOptionPane.YES_NO_OPTION);

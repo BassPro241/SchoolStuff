@@ -1,0 +1,51 @@
+package shapes;
+
+import javax.swing.ButtonGroup;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
+
+
+public class Stuff {
+	
+	public static void main(String[] args)
+	{
+		
+		JFrame frame1, frame2;
+		int choice1 = JOptionPane.showConfirmDialog(
+			    frame1,
+			    "Would you like to calculate the area of a shape?",
+			    "Shapes",
+			    JOptionPane.YES_NO_OPTION);
+		
+		if(choice1 == 1)
+		{
+			
+			final int numButtons = 3;
+			JRadioButton[] radioButtons = new JRadioButton[numButtons];
+			final ButtonGroup group = new ButtonGroup();
+			
+	        JButton pickIt = null;
+			
+	        final String triangleCommand = "triangle";
+	        final String rectangleCommand = "rectangle";
+	        final String circleCommand = "circle";
+	        
+			radioButtons[0] = new JRadioButton("Triangle");
+			radioButtons[0].setActionCommand(triangleCommand);
+			
+			radioButtons[1] = new JRadioButton("Rectangle");
+			radioButtons[1].setActionCommand(rectangleCommand);
+			
+			radioButtons[2] = new JRadioButton("Circle");
+			radioButtons[2].setActionCommand(circleCommand);
+			
+			do
+			{
+				
+			}while()
+		}
+	}
+
+}

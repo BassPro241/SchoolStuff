@@ -1,0 +1,20 @@
+package shapes;
+
+public class Circle {
+	
+	protected double radius;
+	private final double pi = 3.14;
+
+	public Circle(double r)
+	{
+		radius = r;
+	}
+	
+	public double getRadius() {
+		return radius;
+	}
+	
+	public void setRadius(double newRadius) {
+		radius = newRadius;
+	}
+}
