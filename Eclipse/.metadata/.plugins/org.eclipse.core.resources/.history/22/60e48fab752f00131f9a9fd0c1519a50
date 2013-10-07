@@ -9,12 +9,6 @@ public class Triangle {
 		base = b;
 		height = h;
 	}
-	
-	public Triangle()
-	{
-		base = 1.0;
-		height = 1.0;
-	}
 
 	public double getArea()
 	{

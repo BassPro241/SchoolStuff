@@ -9,11 +9,6 @@ public class Circle {
 		radius = r;
 	}
 	
-	public Circle()
-	{
-		radius = 1.0;
-	}
-	
 	public double getArea()
 	{
 		double area = Math.PI * Math.pow(getRadius(), 2.0);
