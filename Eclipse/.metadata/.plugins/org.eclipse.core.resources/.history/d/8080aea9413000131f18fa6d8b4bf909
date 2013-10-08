@@ -4,7 +4,6 @@ import java.awt.BorderLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.BoxLayout;
 import javax.swing.ButtonGroup;
@@ -13,32 +12,31 @@ import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
-import javax.swing.JTabbedPane;
 import javax.swing.JTextField;
-import javax.swing.border.Border;
 
 public class Stuff {
 
-	public static void main(String[] args) {
+	public static void main(String[] args)
+	{
 
-		int choice1 = JOptionPane.showConfirmDialog(null,
-				"Would you like to calculate the area of a shape?", "Shapes",
-				JOptionPane.YES_NO_OPTION);
+		int choice1 = JOptionPane.showConfirmDialog(
+			    null,
+			    "Would you like to calculate the area of a shape?",
+			    "Shapes",
+			    JOptionPane.YES_NO_OPTION);
 
-		if (choice1 == JOptionPane.OK_OPTION) {
-
-			do {
-				JPanel pane1 = createShapesPicker();
-				Border padding = BorderFactory.createEmptyBorder(20, 20, 5, 20);
-				pane1.setBorder(padding);;
-
-				JTabbedPane tabbedPane = new JTabbedPane();
-				tabbedPane.addTab("Shape Area Calculator", null, pane1,
-						"Shapes");
-
-			} while ((JOptionPane.showConfirmDialog(null,
-					"Would you like to go again?", "Shapes",
-					JOptionPane.YES_NO_OPTION)) == 0);
+		
+		if(choice1 == JOptionPane.OK_OPTION)
+		{
+			do{
+		        
+				createShapesPicker();
+		        
+			}while((JOptionPane.showConfirmDialog(
+				    null,
+				    "Would you like to go again?",
+				    "Shapes",
+				    JOptionPane.YES_NO_OPTION)) == 0);
 		}
 	}
 	private static JPanel createShapesPicker() {
@@ -102,21 +100,17 @@ public class Stuff {
 				String command = group.getSelection().getActionCommand();
 
 				if (command == triangleCommand) {
-					int triInput = JOptionPane
-							.showConfirmDialog(
-									null,
-									triPanel,
-									"Please enter enter a base and height for your triangle.",
-									JOptionPane.OK_CANCEL_OPTION);
-					if (triInput == JOptionPane.OK_OPTION) {
+					int triInput = JOptionPane.showConfirmDialog(null,
+							triPanel,
+							"Please enter enter a base and height for your triangle.",
+							JOptionPane.OK_CANCEL_OPTION);
+					if(triInput == JOptionPane.OK_OPTION)
+					{
 						tri1.setBase(Double.parseDouble(base.getText()));
 						tri1.setHeight(Double.parseDouble(height2.getText()));
-
-						JOptionPane.showMessageDialog(
-								null,
-								"Base = " + tri1.getBase() + "\nHeight = "
-										+ tri1.getHeight() + "\nArea = "
-										+ tri1.getArea(), "Triangle",
+						
+						JOptionPane
+						.showMessageDialog(null, "Base = " + tri1.getBase() + "\nHeight = " + tri1.getHeight() + "\nArea = " + tri1.getArea(), "Triangle",
 								JOptionPane.PLAIN_MESSAGE);
 					}
 				} else if (command == circleCommand) {
@@ -124,41 +118,38 @@ public class Stuff {
 							cirPanel,
 							"Please enter enter a radius for your circle.",
 							JOptionPane.OK_CANCEL_OPTION);
-					if (cirInput == JOptionPane.OK_OPTION) {
+					if(cirInput == JOptionPane.OK_OPTION)
+					{
 						circle1.setRadius(Double.parseDouble(radius.getText()));
-
-						JOptionPane.showMessageDialog(null,
-								"Radius = " + circle1.getRadius() + "\nArea = "
-										+ circle1.getArea(), "Circle",
+						
+						JOptionPane
+						.showMessageDialog(null, "Radius = " + circle1.getRadius() + "\nArea = " + circle1.getArea(), "Circle",
 								JOptionPane.PLAIN_MESSAGE);
 					}
 				} else if (command == rectangleCommand) {
-					int rectInput = JOptionPane
-							.showConfirmDialog(
-									null,
-									rectPanel,
-									"Please enter enter a length and height for your rectangle.",
-									JOptionPane.OK_CANCEL_OPTION);
-					if (rectInput == JOptionPane.OK_OPTION) {
+					int rectInput = JOptionPane.showConfirmDialog(null,
+							rectPanel,
+							"Please enter enter a length and height for your rectangle.",
+							JOptionPane.OK_CANCEL_OPTION);
+					if(rectInput == JOptionPane.OK_OPTION)
+					{
 						rect1.setLength(Double.parseDouble(length.getText()));
 						tri1.setHeight(Double.parseDouble(height1.getText()));
-
-						JOptionPane.showMessageDialog(null,
-								"Length = " + rect1.getLength() + "\nHeight = "
-										+ rect1.getHeight() + "\nArea = "
-										+ rect1.getArea(), "Rectangle",
+						
+						JOptionPane
+						.showMessageDialog(null, "Length = " + rect1.getLength() + "\nHeight = " + rect1.getHeight() + "\nArea = " + rect1.getArea(), "Rectangle",
 								JOptionPane.PLAIN_MESSAGE);
 					}
-
+					
 				}
 			}
 
 		});
 		return createPane("Shapes", radioButtons, pickIt);
 	}
-
-	private static JPanel createPane(String description,
-			JRadioButton[] radioButtons, JButton showButton) {
+	
+	private static JPanel createPane(String description, JRadioButton[] radioButtons,
+			JButton showButton) {
 
 		int numChoices = radioButtons.length;
 		JPanel box = new JPanel();
