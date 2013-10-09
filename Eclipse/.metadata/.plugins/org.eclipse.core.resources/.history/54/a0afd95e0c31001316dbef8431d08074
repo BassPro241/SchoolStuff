@@ -36,7 +36,7 @@ public class Stuff extends JPanel {
 	}
 
 	private static JPanel createShapesPicker() {
-		final int numButtons = 4;
+		final int numButtons = 3;
 		JRadioButton[] radioButtons = new JRadioButton[numButtons];
 		final ButtonGroup group = new ButtonGroup();
 
@@ -49,7 +49,6 @@ public class Stuff extends JPanel {
 		final String triangleCommand = "triangle";
 		final String rectangleCommand = "rectangle";
 		final String circleCommand = "circle";
-		final String quitCommand = "quit";
 
 		final JTextField radius = new JTextField(10);
 		final JTextField length = new JTextField(10);
@@ -84,9 +83,6 @@ public class Stuff extends JPanel {
 
 		radioButtons[2] = new JRadioButton("Circle");
 		radioButtons[2].setActionCommand(circleCommand);
-		
-		radioButtons[3] = new JRadioButton("Quit");
-		radioButtons[3].setActionCommand(quitCommand);
 
 		for (int i = 0; i < numButtons; i++) {
 			group.add(radioButtons[i]);
@@ -139,7 +135,7 @@ public class Stuff extends JPanel {
 									JOptionPane.OK_CANCEL_OPTION);
 					if (rectInput == JOptionPane.OK_OPTION) {
 						rect1.setLength(Double.parseDouble(length.getText()));
-						rect1.setHeight(Double.parseDouble(height1.getText()));
+						tri1.setHeight(Double.parseDouble(height1.getText()));
 
 						JOptionPane.showMessageDialog(null,
 								"Length = " + rect1.getLength() + "\nHeight = "
@@ -148,14 +144,6 @@ public class Stuff extends JPanel {
 								JOptionPane.PLAIN_MESSAGE);
 					}
 
-				}else if(command == quitCommand)
-				{
-					int quit = JOptionPane.showConfirmDialog(null, "Are you sure you would like to quit?", "Quit?", JOptionPane.YES_NO_OPTION);
-					
-					if(quit == JOptionPane.YES_OPTION)
-					{
-
-					}
 				}
 			}
 

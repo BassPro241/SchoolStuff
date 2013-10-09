@@ -154,7 +154,7 @@ public class Stuff extends JPanel {
 					
 					if(quit == JOptionPane.YES_OPTION)
 					{
-
+						quit = JOptionPane.ABORT;
 					}
 				}
 			}

@@ -18,7 +18,7 @@ public class Triangle {
 
 	public double getArea()
 	{
-		double area = (1.000/2.000) * getBase() * getHeight();
+		double area = (1.0/2.0) * getBase() * getHeight();
 		return area;
 	}
 	public void setBase(double newBase) {
