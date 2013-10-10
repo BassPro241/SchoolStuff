@@ -40,7 +40,7 @@ public class Stuff extends JPanel {
 		JRadioButton[] radioButtons = new JRadioButton[numButtons];
 		final ButtonGroup group = new ButtonGroup();
 
-		final JButton pickIt = new JButton("Pick It!");
+		JButton pickIt = null;
 
 		final Circle circle1 = new Circle();
 		final Rectangle rect1 = new Rectangle();
@@ -56,9 +56,6 @@ public class Stuff extends JPanel {
 		final JTextField height1 = new JTextField(10);
 		final JTextField base = new JTextField(10);
 		final JTextField height2 = new JTextField(10);
-		final JTextField side1 = new JTextField(10);
-		final JTextField side2 = new JTextField(10);
-		final JTextField side3 = new JTextField(10);
 
 		final JPanel cirPanel = new JPanel();;
 		final JPanel rectPanel = new JPanel();;
@@ -87,8 +84,8 @@ public class Stuff extends JPanel {
 
 		radioButtons[2] = new JRadioButton("Circle");
 		radioButtons[2].setActionCommand(circleCommand);
-
-		radioButtons[3] = new JRadioButton("Quit (Press twice to quit)");
+		
+		radioButtons[3] = new JRadioButton("Quit");
 		radioButtons[3].setActionCommand(quitCommand);
 
 		for (int i = 0; i < numButtons; i++) {
@@ -97,6 +94,7 @@ public class Stuff extends JPanel {
 
 		radioButtons[0].setSelected(true);
 
+		pickIt = new JButton("Pick It!");
 		pickIt.addActionListener(new ActionListener() {
 			public void actionPerformed(ActionEvent e) {
 				String command = group.getSelection().getActionCommand();
@@ -150,25 +148,21 @@ public class Stuff extends JPanel {
 								JOptionPane.PLAIN_MESSAGE);
 					}
 
-				} else if (command == quitCommand) {
-					pickIt.addActionListener(new ActionListener() {
-						public void actionPerformed(ActionEvent e) {
-							if (e.getSource() == pickIt) {
-								if (JOptionPane.showConfirmDialog(null,
-										"Are you sure you would like to quit?",
-										"Quit?", JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
-
-									System.exit(0);
-								}
-							}
-						}
-					});
+				}else if(command == quitCommand)
+				{
+					int quit = JOptionPane.showConfirmDialog(null, "Are you sure you would like to quit?", "Quit?", JOptionPane.YES_NO_OPTION);
+					
+					if(quit == JOptionPane.YES_OPTION)
+					{
+						
+					}
 				}
 			}
 
 		});
 		return createPane("Shapes", radioButtons, pickIt);
 	}
+
 	private static JPanel createPane(String description,
 			JRadioButton[] radioButtons, JButton showButton) {
 
@@ -205,78 +199,85 @@ public class Stuff extends JPanel {
 	}
 
 	public static void main(String[] args) {
+		do {
 
-		Random panelMessage = new Random();
-		int random;
-		int choice1 = JOptionPane.showConfirmDialog(null,
-				"Would you like to calculate the area of a shape?", "Shapes",
-				JOptionPane.YES_NO_OPTION);
+			Random panelMessage = new Random();
+			int random;
+			int choice1 = JOptionPane.showConfirmDialog(null,
+					"Would you like to calculate the area of a shape?",
+					"Shapes", JOptionPane.YES_NO_OPTION);
 
-		if (choice1 == JOptionPane.YES_OPTION) {
+			if (choice1 == JOptionPane.OK_OPTION) {
 
-			javax.swing.SwingUtilities.invokeLater(new Runnable() {
-				public void run() {
-					createAndShowGUI();
+				javax.swing.SwingUtilities.invokeLater(new Runnable() {
+					public void run() {
+						createAndShowGUI();
+					}
+				});
+				break;
+			} else {
+				random = panelMessage.nextInt(10);
+				switch (random) {
+					case 0 :
+						JOptionPane.showMessageDialog(null,
+								"...for a thousand years!",
+								"You have been banished to the Moon...",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 1 :
+						JOptionPane.showMessageDialog(null,
+								"You got sent to the sun...", "Wat.",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 2 :
+						JOptionPane.showMessageDialog(null,
+								"...and you were eaten.",
+								"You run into a zombie...",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 3 :
+						JOptionPane.showMessageDialog(null, "...by a creeper.",
+								"You were blown up...",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 4 :
+						JOptionPane.showMessageDialog(null, "...in lava.",
+								"You tried to swim...",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 5 :
+						JOptionPane.showMessageDialog(null,
+								"You don't even lift.", "Bro,",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 6 :
+						JOptionPane.showMessageDialog(null, "...even hoist?",
+								"Doth thou...", JOptionPane.WARNING_MESSAGE);
+						break;
+					case 7 :
+						JOptionPane.showMessageDialog(null,
+								"...person...stahp!",
+								"Person...wat r u doin...",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 8 :
+						JOptionPane.showMessageDialog(null, "...Bob Philman!",
+								"Happy Birthday...",
+								JOptionPane.WARNING_MESSAGE);
+						break;
+					case 9 :
+						JOptionPane.showMessageDialog(null,
+								"...the kids, they listen to the rap..."
+										+ "\n...which gives them "
+										+ "the brain damage.", "You see...",
+								JOptionPane.WARNING_MESSAGE);
+						break;
 				}
-			});
-		} else {
-			random = panelMessage.nextInt(10);
-			switch (random) {
-				case 0 :
-					JOptionPane.showMessageDialog(null,
-							"...for a thousand years!",
-							"You have been banished to the Moon...",
-							JOptionPane.WARNING_MESSAGE);
-					break;
-				case 1 :
-					JOptionPane.showMessageDialog(null,
-							"You got sent to the sun...", "Wat.",
-							JOptionPane.WARNING_MESSAGE);
-					break;
-				case 2 :
-					JOptionPane.showMessageDialog(null,
-							"...and you were eaten.",
-							"You run into a zombie...",
-							JOptionPane.WARNING_MESSAGE);
-					break;
-				case 3 :
-					JOptionPane
-							.showMessageDialog(null, "...by a creeper.",
-									"You were blown up...",
-									JOptionPane.WARNING_MESSAGE);
-					break;
-				case 4 :
-					JOptionPane
-							.showMessageDialog(null, "...in lava.",
-									"You tried to swim...",
-									JOptionPane.WARNING_MESSAGE);
-					break;
-				case 5 :
-					JOptionPane.showMessageDialog(null, "You don't even lift.",
-							"Bro,", JOptionPane.WARNING_MESSAGE);
-					break;
-				case 6 :
-					JOptionPane.showMessageDialog(null, "...even hoist?",
-							"Doth thou...", JOptionPane.WARNING_MESSAGE);
-					break;
-				case 7 :
-					JOptionPane.showMessageDialog(null, "...person...stahp!",
-							"Person...wat r u doin...",
-							JOptionPane.WARNING_MESSAGE);
-					break;
-				case 8 :
-					JOptionPane.showMessageDialog(null, "...Bob Philman!",
-							"Happy Birthday...", JOptionPane.WARNING_MESSAGE);
-					break;
-				case 9 :
-					JOptionPane.showMessageDialog(null,
-							"...the kids, they listen to the rap..."
-									+ "\n...which gives them "
-									+ "the brain damage.", "You see...",
-							JOptionPane.WARNING_MESSAGE);
-					break;
+				break;
 			}
-		}
+		} while ((JOptionPane.showConfirmDialog(null,
+				"Would you like to go again?", "Shapes",
+				JOptionPane.YES_NO_OPTION)) == 0);
 
 	}
 

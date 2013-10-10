@@ -56,9 +56,6 @@ public class Stuff extends JPanel {
 		final JTextField height1 = new JTextField(10);
 		final JTextField base = new JTextField(10);
 		final JTextField height2 = new JTextField(10);
-		final JTextField side1 = new JTextField(10);
-		final JTextField side2 = new JTextField(10);
-		final JTextField side3 = new JTextField(10);
 
 		final JPanel cirPanel = new JPanel();;
 		final JPanel rectPanel = new JPanel();;

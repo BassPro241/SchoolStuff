@@ -36,5 +36,27 @@ public class Triangle {
 		return height;
 	}
 
+	public void setSide1(double newSide) {
+		side1 = newSide;
+	}
+
+	public double getSide1() {
+		return side1;
+	}
+
+	public void setSide2(double newSide) {
+		side2 = newSide;
+	}
+
+	public double getSide2() {
+		return side2;
+	}
+	public void setSide3(double newSide) {
+		side3 = newSide;
+	}
+
+	public double getSide3() {
+		return side3;
+	}
 
 }
