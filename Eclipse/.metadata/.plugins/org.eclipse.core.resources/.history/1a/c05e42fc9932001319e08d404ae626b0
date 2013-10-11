@@ -149,7 +149,7 @@ public class Stuff extends JPanel {
 						JOptionPane.showMessageDialog(
 								null,
 								"Side 1 = " + tri2.getSide1() + "\nSide 2 = "
-										+ tri2.getSide2() + "\nSide 3 = "
+										+ tri2.getHeight() + "\nSide 3 "
 										+ tri2.getSide3() + "\nArea = "
 										+ tri2.getHeron(), "Triangle",
 								JOptionPane.PLAIN_MESSAGE);

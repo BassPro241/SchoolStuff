@@ -101,7 +101,7 @@ public class Stuff extends JPanel {
 		radioButtons[2].setActionCommand(circleCommand);
 
 		radioButtons[3] = new JRadioButton("Triangle (Heron's Formula");
-		radioButtons[3].setActionCommand(heronCommand);
+		radioButtons[3].setActionCommand(triangleCommand);
 
 		radioButtons[4] = new JRadioButton("Quit (Press twice to quit)");
 		radioButtons[4].setActionCommand(quitCommand);
@@ -149,7 +149,7 @@ public class Stuff extends JPanel {
 						JOptionPane.showMessageDialog(
 								null,
 								"Side 1 = " + tri2.getSide1() + "\nSide 2 = "
-										+ tri2.getSide2() + "\nSide 3 = "
+										+ tri2.getHeight() + "\nSide 3 "
 										+ tri2.getSide3() + "\nArea = "
 										+ tri2.getHeron(), "Triangle",
 								JOptionPane.PLAIN_MESSAGE);

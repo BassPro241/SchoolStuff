@@ -36,7 +36,7 @@ public class Stuff extends JPanel {
 	}
 
 	private static JPanel createShapesPicker() {
-		final int numButtons = 5;
+		final int numButtons = 4;
 		JRadioButton[] radioButtons = new JRadioButton[numButtons];
 		final ButtonGroup group = new ButtonGroup();
 
@@ -45,12 +45,10 @@ public class Stuff extends JPanel {
 		final Circle circle1 = new Circle();
 		final Rectangle rect1 = new Rectangle();
 		final Triangle tri1 = new Triangle();
-		final Triangle2 tri2 = new Triangle2();
 
 		final String triangleCommand = "triangle";
 		final String rectangleCommand = "rectangle";
 		final String circleCommand = "circle";
-		final String heronCommand = "heron";
 		final String quitCommand = "quit";
 
 		final JTextField radius = new JTextField(10);
@@ -62,10 +60,9 @@ public class Stuff extends JPanel {
 		final JTextField side2 = new JTextField(10);
 		final JTextField side3 = new JTextField(10);
 
-		final JPanel cirPanel = new JPanel();
-		final JPanel rectPanel = new JPanel();
-		final JPanel triPanel = new JPanel();
-		final JPanel tri2Panel = new JPanel();
+		final JPanel cirPanel = new JPanel();;
+		final JPanel rectPanel = new JPanel();;
+		final JPanel triPanel = new JPanel();;
 
 		cirPanel.add(new JLabel("Radius: "));
 		cirPanel.add(radius);
@@ -82,15 +79,6 @@ public class Stuff extends JPanel {
 		triPanel.add(new JLabel("Height: "));
 		triPanel.add(height2);
 
-		tri2Panel.add(new JLabel("Side 1: "));
-		tri2Panel.add(side1);
-		tri2Panel.add(Box.createHorizontalStrut(15));
-		tri2Panel.add(new JLabel("Side 2: "));
-		tri2Panel.add(side2);
-		tri2Panel.add(Box.createHorizontalStrut(15));
-		tri2Panel.add(new JLabel("Side 3: "));
-		tri2Panel.add(side3);
-
 		radioButtons[0] = new JRadioButton("Triangle");
 		radioButtons[0].setActionCommand(triangleCommand);
 
@@ -100,11 +88,8 @@ public class Stuff extends JPanel {
 		radioButtons[2] = new JRadioButton("Circle");
 		radioButtons[2].setActionCommand(circleCommand);
 
-		radioButtons[3] = new JRadioButton("Triangle (Heron's Formula");
-		radioButtons[3].setActionCommand(heronCommand);
-
-		radioButtons[4] = new JRadioButton("Quit (Press twice to quit)");
-		radioButtons[4].setActionCommand(quitCommand);
+		radioButtons[3] = new JRadioButton("Quit (Press twice to quit)");
+		radioButtons[3].setActionCommand(quitCommand);
 
 		for (int i = 0; i < numButtons; i++) {
 			group.add(radioButtons[i]);
@@ -132,26 +117,6 @@ public class Stuff extends JPanel {
 								"Base = " + tri1.getBase() + "\nHeight = "
 										+ tri1.getHeight() + "\nArea = "
 										+ tri1.getArea(), "Triangle",
-								JOptionPane.PLAIN_MESSAGE);
-					}
-				} else if (command == heronCommand) {
-					int triInput = JOptionPane
-							.showConfirmDialog(
-									null,
-									tri2Panel,
-									"Please enter enter three side lengths for your triangle.",
-									JOptionPane.OK_CANCEL_OPTION);
-					if (triInput == JOptionPane.OK_OPTION) {
-						tri2.setSide1(Double.parseDouble(side1.getText()));
-						tri2.setSide2(Double.parseDouble(side2.getText()));
-						tri2.setSide3(Double.parseDouble(side3.getText()));
-
-						JOptionPane.showMessageDialog(
-								null,
-								"Side 1 = " + tri2.getSide1() + "\nSide 2 = "
-										+ tri2.getSide2() + "\nSide 3 = "
-										+ tri2.getSide3() + "\nArea = "
-										+ tri2.getHeron(), "Triangle",
 								JOptionPane.PLAIN_MESSAGE);
 					}
 				} else if (command == circleCommand) {
