@@ -1,0 +1,33 @@
+package pistachio2;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner potato = new Scanner(System.in);
+
+		double quarter, dime, nickel, penny;
+
+		System.out.println("Please Enter the Cost of the Item:");
+		double cost = potato.nextDouble();
+		System.out.println("Please Enter the Amount Paid:");
+		double paid = potato.nextDouble();
+
+		double change = cost - paid;
+
+		quarter = (change / 0.25);
+		change = change % 0.25;
+		dime = (change / 0.10);
+		change = change % 0.10;
+		nickel = (change / 0.05);
+		change = change % 5;
+		penny = change;
+
+		System.out.println("Change Owed: " + change + "\nQuarters: " + quarter
+				+ "\nDimes: " + dime + "\nNickels: " + nickel + "\nPennies: "
+				+ penny);
+
+	}
+
+}

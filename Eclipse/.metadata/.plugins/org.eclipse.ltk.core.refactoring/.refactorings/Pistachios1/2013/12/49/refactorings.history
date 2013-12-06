@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;pistachio.Pistachio1&apos; to &apos;Main&apos;&#x0D;&#x0A;- Original project: &apos;Pistachios1&apos;&#x0D;&#x0A;- Original element: &apos;pistachio.Pistachio1&apos;&#x0D;&#x0A;- Renamed element: &apos;pistachio.Main&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;Pistachio1&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;pistachio{Pistachio1.java[Pistachio1" matchStrategy="1" name="Main" qualified="false" references="true" similarDeclarations="false" stamp="1386008688288" textual="false" version="1.0"/>
+</session>

@@ -1,0 +1,21 @@
+package pistachio;
+
+import java.util.Scanner;
+
+public class Main {
+
+	public static void main(String[] args) {
+		Scanner potato = new Scanner(System.in);
+
+		System.out.println("Please enter your test grades.");
+
+		System.out.println("Test 1: ");
+		double test1 = potato.nextDouble();
+		System.out.println("Test 2: ");
+		double test2 = potato.nextDouble();
+		
+		System.out.println("Please enter your test grades.");
+		
+	}
+
+}

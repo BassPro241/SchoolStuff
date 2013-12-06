@@ -21,9 +21,10 @@ public class Triangle2 extends Triangle{
 	}
 
 	public double getHeron() {
-		double s = (getSide1() + getSide2() + getSide3() / 2.00);
+		double s = ((getSide1() + getSide2() + getSide3()) / 2.00);
 		double areap1 = s * (s - getSide1()) * (s - getSide2()) * (s - getSide3());
 		double area = Math.sqrt(areap1);
+		area = ((100) * Math.round(area)) / 100;
 		return area;
 	}
 
