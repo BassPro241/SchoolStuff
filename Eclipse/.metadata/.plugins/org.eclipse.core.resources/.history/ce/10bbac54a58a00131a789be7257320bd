@@ -1,0 +1,22 @@
+package pistachio6;
+
+import java.util.ArrayList;
+
+public class Main
+{
+    
+    public static void main(String[] args) {
+        ArrayList<Whatchamacallit> list = new ArrayList<Whatchamacallit>();
+        
+        list.add(new Whatchamacallit());
+        list.add(new Whatchamacallit(3.5, "book"));
+        list.add(new Whatchamacallit(-17, "CD"));
+        list.add(new Whatchamacallit(18.95, "sweater"));
+        list.add(new Whatchamacallit(5, "notebook"));
+        
+        for (Whatchamacallit w : list)
+            System.out.println(w);
+        
+        System.out.println(list.get(1));
+    }
+}
